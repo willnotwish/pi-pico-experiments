@@ -1,6 +1,7 @@
 from machine import Pin
 from utime import sleep
 
+# GPIO pin designations
 pin20 = Pin(20)
 pin21 = Pin(21)
 
