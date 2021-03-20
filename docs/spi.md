@@ -13,5 +13,22 @@ My goals are twofold.
 1. To understand how to talk to a SSD1306 using SPI. Most of the many examples out there concentrate on I2C, rather than SPI.
 2. To get the radio working by replacing the SSD1305-based OLED with a SSD1306.
 
-### SPI interfacing experiments
+### Dev environment
 For this I used a Raspberry Pi Pico running Micropython.
+
+I started by flashing Micropython onto the pico following the usual instructions.
+
+I set up my development environment using [rshell](https://github.com/dhylands/rshell). It needs Python installed on the host machine, which is in this case my Linux laptop. You could develop on a Raspberry Pi 4 with Thonny, but I wanted to use my laptop with vscode because that's what I use for other (non Python) projects.
+
+I'm trying not to install too much software on my laptop these days; instead I develop in Docker containers. I do so with Rails projects and it works fine.
+
+I wrote a custom Dockerfile based on the official Python image with `rshell` added, launched it with access to the relevant USB device hosting the pico and ran `rshell` from there. I generally use `docker-compose` but you can just do `docker run` if you prefer.
+
+At the `rshell` prompt in vscode you can copy files from the source directories to the pico (the pico appears under the directory `/pyboard` in rshell), enter the `repl` prompt, import modules from the developed code and run sample code to see what happens.
+
+### SPI protocol
+I connected a cheap, supposedly-SPI capable OLED to the pico, ran some sample code -- and nothing whatsoever happened! I couldn't get anything to display.
+
+Because I am trying to understand how SPI works, I decided to monitor the SPI hardware on the pico with my Rigol scope. In order to make things as simple as possible I disconnected the OLED and just looked at the SPI clock and data out (that's COPI -- formerly MOSI) lines. They look to be working OK.
+
+
