@@ -29,6 +29,6 @@ At the `rshell` prompt in vscode you can copy files from the source directories 
 ### SPI protocol
 I connected a cheap, supposedly-SPI capable OLED to the pico, ran some sample code -- and nothing whatsoever happened! I couldn't get anything to display.
 
-Because I am trying to understand how SPI works, I decided to monitor the SPI hardware on the pico with my Rigol scope. In order to make things as simple as possible I disconnected the OLED and just looked at the SPI clock and data out (that's COPI -- formerly MOSI) lines. They look to be working OK.
+Because I am trying to understand how SPI works, I decided to monitor the SPI hardware on the pico with my Rigol scope. In order to make things as simple as possible I disconnected the OLED and just looked at the SPI clock and data out (that's COPI -- formerly MOSI) lines. They look to be working OK.s
 
 
