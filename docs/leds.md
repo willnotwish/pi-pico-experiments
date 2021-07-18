@@ -19,7 +19,9 @@ To test which pin is which, be conservative. Try a 220 R resistor.
 
 If this works, we could go for R(red) = 150 R, and R (green/blue) = 100 R.
 
-Uh oh. There's a problem. Although the datasheet shows six connectors, the devices I have only have four. Presumably there's a common connection to the three LEDs.
+**Uh oh. There's a problem.** Although the datasheet shows six connectors, the devices I have only have four. Presumably there's a common connection to the three LEDs.
 
-After some tests with my multimeter, I think it's the anodes (+) that are connected together.
+After some tests with my multimeter, I think it's the anodes (+) that are connected together, to the common.
+
+**Or maybe not. They could be completely different: the SK812 with a controller chip built in. If so, that changes things.**
 
