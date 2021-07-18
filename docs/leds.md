@@ -25,5 +25,7 @@ After some tests with my multimeter, I think it's the anodes (+) that are connec
 
 **Or maybe not. They could be completely different: the SK812 with a controller chip built in. If so, that changes things.**
 
-Here's the [data sheet](https://cdn-shop.adafruit.com/product-files/1138/SK6812+LED+datasheet+.pdf)
+Here's the [data sheet](https://cdn-shop.adafruit.com/product-files/1138/SK6812+LED+datasheet+.pdf).
+
+To drive one of those requires precise timing: bit banging in a tight loop, or maybe using the SPI.
 
