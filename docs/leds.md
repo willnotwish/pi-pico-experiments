@@ -50,3 +50,13 @@ To send a 1, hold DI high for 600ns (T1H), then low for 600ns (T1L)
 > It takes 1.2us to send either a 1 or a 0. This where the typical fDIN of 800kHz comes from: 1000/1.2 kHz = 833kHz.
 
 There is a large tolerance of +/- 150ns on each of T0H, T0L, T1H and T1L.
+
+There are a few ways to achieve this:
+1. Design some dedicated hardware to output the desired but pattern given a 0 or a 1 input.
+2. Bit bang one of the Pico's output pins with a software timing loop.
+3. Use one of the Pico's coprocessors.
+
+Let's start with option 2 as it's the simplest to understand.
+
+### Bit banging in software
+
