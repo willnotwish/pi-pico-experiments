@@ -42,5 +42,7 @@ In this way the data contained within the triplets is clocked to the SK6812 at a
 
 To send a 0 or a 1 control bit (24 control bits in a triplet), the protocol is
 
+<img width="372" alt="Screenshot 2021-07-19 at 09 47 59" src="https://user-images.githubusercontent.com/52467/126132210-06aef11d-bc76-40f4-b2e7-da1ae47c260d.png">
+
 
 
