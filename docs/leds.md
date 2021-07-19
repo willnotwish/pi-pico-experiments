@@ -60,3 +60,48 @@ Let's start with option 2 as it's the simplest to understand.
 
 ### Bit banging in software
 
+Suppose we only have one LED (SK6812), and we want to "program" it to be red. According to the datasheet, the sequence (I think - it's a bit confusing) is G - R - B.
+
+In binary, for pure red (all bits on), with green & blue turned off, we need
+
+```
+0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+```
+
+For a 0, remember, DI high for 300ns, low for 900ns. For a 1, it's DI high for 600ns, low for 600ns.
+
+300ns is the smallest interval we need to consider. Call this one "tick".
+
+Suppose we write an `idle` function that does nothing for a given number of ticks (*i.e.*, multiples of 300ns).
+
+To send a 0, pseudocode would look something like this:
+
+```
+set(1)
+idle(1)
+set(0)
+idle(3)
+```
+
+Call this `sendOne()`.
+
+For a 0, it's
+```
+set(1)
+idle(2)
+set(0)
+idle(2)
+```
+
+Call this `sendZero()`.
+
+`reset()` holds DI low for at least 50us (the datasheet specifically mentions 80us).
+
+80us is the equivalent of 80000/300 ticks = 267 ticks
+
+`reset` looks like this
+
+```
+set(0)
+idle(267)
+```
