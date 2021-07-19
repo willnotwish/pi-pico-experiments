@@ -85,7 +85,7 @@ idle(3)
 
 Call this `sendOne()`.
 
-For a 0, it's
+For a 1, it's
 ```
 set(1)
 idle(2)
@@ -105,3 +105,48 @@ Call this `sendZero()`.
 set(0)
 idle(267)
 ```
+
+To send an 8-bit value `N`, break it down into binary, and then call `sendOne()` or `sendZero()` as appropriate.
+
+For example, to send the decimal value 64 (01000000 in binary):
+
+```
+setZero()
+setOne()
+setZero()
+setZero()
+setZero()
+setZero()
+setZero()
+setZero()
+```
+
+Call this `sendByte(n)`.
+
+To send a triplet, write a function `sendTriplet(red, green, blue)` where `red`, `green` and `blue` are 8 bit values (bytes) between 0 and 255.
+
+**Remember** In the implementation of sendTriplet, the order the SK2812 wants is green-red-blue. So be sure to send the bits in the right order, and not in the order given by the parameter list.
+
+Finally, to address a single LED, first reset and then send the triplet.
+
+To turn the LED red:
+
+```
+reset()
+sendTriplet(255, 0, 0)
+```
+
+For green:
+```
+reset()
+sendTriplet(0, 255, 0)
+```
+
+and for blue
+```
+reset()
+sendTriplet(0, 0, 255)
+```
+
+Let's get this working and go on from there. Maybe we could implement some hex colour codes.
+
