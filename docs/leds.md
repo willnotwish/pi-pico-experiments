@@ -47,6 +47,6 @@ To send a 0 or a 1 control bit (24 control bits in a triplet), the protocol is
 To send a 0, hold DI high for 300ns (T0H), then low for 900ns (T0L)
 To send a 1, hold DI high for 600ns (T1H), then low for 600ns (T1L)
 
-Thus we see that it takes 1200ns to send either a 1 or a 0. This where the typical fDIN of 800kHz comes from: 1000/1.2 kHz = 833kHz 
+> It takes 1.2us to send either a 1 or a 0. This where the typical fDIN of 800kHz comes from: 1000/1.2 kHz = 833kHz.
 
 There is a large tolerance of +/- 150ns on each of T0H, T0L, T1H and T1L.
