@@ -23,9 +23,24 @@ If this works, we could go for R(red) = 150 R, and R (green/blue) = 100 R.
 
 After some tests with my multimeter, I think it's the anodes (+) that are connected together, to the common.
 
-**Or maybe not. They could be completely different: the SK812 with a controller chip built in. If so, that changes things.**
+**Or maybe not. They could be completely different: the SK6812 with a controller chip built in. If so, that changes things.**
 
 Here's the [data sheet](https://cdn-shop.adafruit.com/product-files/1138/SK6812+LED+datasheet+.pdf).
 
 To drive one of those requires precise timing: bit banging in a tight loop, or maybe using the SPI.
+
+## Driving SK6812 or similar
+Because the driver chip is built in, you don't control red, green and blue separately. You "send" the chip 3x8-bit bytes (one byte per LED). I call this a `triplet`.
+
+As well as power VDD (*i.e.*, 5V) + VSS (0V), the SK6812 has a data input DI. You send the data to DI.
+
+There is also a data output DO, which you can connect to DI of the next LED in the chain if required. To address many LEDs in the chain, you send as many triplets as there are LEDs.
+
+To send a new sequence of triplets, hold the DI line low for at least 50 microseconds.
+
+In this way the data contained within the triplets is clocked to the SK6812 at a fixed frequency `fDIN` of 800kHz.
+
+To send a 0 or a 1 control bit (24 control bits in a triplet), the protocol is
+
+
 
