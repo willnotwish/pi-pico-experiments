@@ -150,3 +150,12 @@ sendTriplet(0, 0, 255)
 
 Let's get this working and go on from there. Maybe we could implement some hex colour codes.
 
+## 3.3V vs 5V: level shifting
+The SK2812 works at 5V, but the Pico only outputs 3.3V. To be sure this is going to work, we need a level shifter.
+
+Start with a basic NPN transistor as a switch. Note that this will invert the signal. We adjust for this in software: our routines `setOne` and `setZero` need to be transposed.
+
+### Power supply considerations
+The Pico needs a 3.3V supply. The SK2812 runs off 5V. The other LED strip uses the WS2811 running off 12V.
+
+I think it's fine to connect the collector of an NPN transistor to a separate 5V or 12V power source via a (say) 10K resistor. If you're worried, start off with a battery.
