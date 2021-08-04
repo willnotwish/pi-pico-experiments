@@ -164,4 +164,11 @@ I think it's fine to connect the collector of an NPN transistor to a separate 5V
 From [a quick investifation](https://github.com/willnotwish/pi-pico-experiments/issues/1) I found that bit banging a GPIO pin in software isn't possible at the kind of speeds we need here,
 at least not with micropython. The maximum frequency I can achieve is about 65kHz. Too slow, by a long way.
 
-Letr's consider an alternative: using the SPI instead.
+One alternative: using the SPI instead.
+
+Another: following the guidance in the Pico's C SDK.
+
+### More random info
+I bought a cheapo LED strip with a solar charger from a discount shop. The LEDs (all white) are not individually addressable. The rechargeable battery is a 1.2V Ni-MH.
+
+I hooked up my scope to look at the driving signal. It's a +/- 2.5V square wave of frequency 800kHz. There must be some sort of boost converter on board. As usual I can't see which chips are used because the manufacturers' markings are scratched off.
