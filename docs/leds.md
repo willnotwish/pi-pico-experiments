@@ -171,7 +171,7 @@ Another: following the guidance in the Pico's C SDK.
 ### More random info
 I bought a cheapo LED strip with a solar charger from a discount shop. The LEDs (all white) are not individually addressable. The rechargeable battery is a 1.2V Ni-MH.
 
-I hooked up my scope to look at the driving signal. It's a +/- 2.5V square wave of frequency 800kHz. There must be some sort of boost converter on board. As usual I can't see which chips are used because the manufacturers' markings are scratched off.
+I hooked up my scope to look at the driving signal. It's a +/- 2.5V square wave of frequency 8kHz. There must be some sort of boost converter on board. As usual I can't see which chips are used because the manufacturers' markings are scratched off.
 
 ![bright-garden-5m-white-led-strip-waveform](https://user-images.githubusercontent.com/52467/128397817-d74e9c1b-0525-4071-966e-92c422cf6e83.png)
 
