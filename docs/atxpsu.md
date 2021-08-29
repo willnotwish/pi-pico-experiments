@@ -9,8 +9,8 @@ There are [so many wires](https://en.wikipedia.org/wiki/ATX#Power_supply)! In ge
 ```
 Red is 5V
 Yellow is 12V
-Black is ground (0V)
-Green is the power on signal (`PS_ON`)
+Black is ground 0V
+Green is the power on signal PS_ON
 ```
 
 There are many articles on the Internet about how to turn your ATX psu into a bench power supply. There are two main things you need to do:
