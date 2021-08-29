@@ -161,7 +161,7 @@ The Pico needs a 3.3V supply. The SK2812 runs off 5V. The other LED strip uses t
 I think it's fine to connect the collector of an NPN transistor to a separate 5V or 12V power source via a (say) 10K resistor. If you're worried, start off with a battery.
 
 ### Timing issues
-From [a quick investifation](https://github.com/willnotwish/pi-pico-experiments/issues/1) I found that bit banging a GPIO pin in software isn't possible at the kind of speeds we need here,
+From [a quick investigation](https://github.com/willnotwish/pi-pico-experiments/issues/1) I found that bit banging a GPIO pin in software isn't possible at the kind of speeds we need here,
 at least not with micropython. The maximum frequency I can achieve is about 65kHz. Too slow, by a long way.
 
 One alternative: using the SPI instead.
