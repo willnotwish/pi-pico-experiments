@@ -160,7 +160,7 @@ The SK2812 works at 5V, but the Pico only outputs 3.3V. To be sure this is going
 
 Start with a basic NPN transistor as a switch. Note that this will invert the signal. We adjust for this in software: our routines `setOne` and `setZero` need to be transposed.
 
-__This didn't work. A transitor switch is too slow. See a more detailed discussion.__
+__This didn't work. A transitor switch is too slow. See a [more detailed discussion](https://github.com/willnotwish/pi-pico-experiments/blob/main/docs/hardware-led-driver.md).__
 
 ### More random info
 I bought a cheapo LED strip with a solar charger from a discount shop. The LEDs (all white) are not individually addressable. The rechargeable battery is a 1.2V Ni-MH.
