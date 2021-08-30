@@ -147,8 +147,13 @@ and for blue
 reset()
 sendTriplet(0, 0, 255)
 ```
+__This didn't work. Micropython is too slow. See a more detailed discussion.__
 
-Let's get this working and go on from there. Maybe we could implement some hex colour codes.
+From [a quick investigation](https://github.com/willnotwish/pi-pico-experiments/issues/1) I found that bit banging a GPIO pin in software isn't possible at the kind of speeds we need here, at least not with micropython. The maximum frequency I can achieve is about 65kHz. Too slow, by a long way.
+
+One alternative is to use the SPI.
+
+Another is to follow the guidance in the Pico's C SDK and use PIO instead. This is what did in the end.
 
 ## 3.3V vs 5V: level shifting
 The SK2812 works at 5V, but the Pico only outputs 3.3V. To be sure this is going to work, we need a level shifter.
@@ -156,19 +161,6 @@ The SK2812 works at 5V, but the Pico only outputs 3.3V. To be sure this is going
 Start with a basic NPN transistor as a switch. Note that this will invert the signal. We adjust for this in software: our routines `setOne` and `setZero` need to be transposed.
 
 __This didn't work. A transitor switch is too slow. See a more detailed discussion.__
-
-### Power supply considerations
-The Pico needs a 3.3V supply. The SK2812 runs off 5V. The other LED strip uses the WS2811 running off 12V.
-
-I think it's fine to connect the collector of an NPN transistor to a separate 5V or 12V power source via a (say) 10K resistor. If you're worried, start off with a battery.
-
-### Timing issues
-From [a quick investigation](https://github.com/willnotwish/pi-pico-experiments/issues/1) I found that bit banging a GPIO pin in software isn't possible at the kind of speeds we need here,
-at least not with micropython. The maximum frequency I can achieve is about 65kHz. Too slow, by a long way.
-
-One alternative: using the SPI instead.
-
-Another: following the guidance in the Pico's C SDK.
 
 ### More random info
 I bought a cheapo LED strip with a solar charger from a discount shop. The LEDs (all white) are not individually addressable. The rechargeable battery is a 1.2V Ni-MH.
