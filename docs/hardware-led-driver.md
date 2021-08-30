@@ -1,3 +1,5 @@
+# LED-driving hardware
+
 The problem is that the Pico runs at 3.3V, but the WS2811 LED strip runs at 12V. Even SK2812 LEDs need 5V. Some sort of level translator is required for reliable operation.
 
 I naively thought I could use a regular bipolar transistor as a switch to do the level shifting, feeding it with a 3.3V signal and driving a 12V output. I tried this, and it didn't work at the frequency required (800kHz). The problem (I believe) is the stray (Miller) capacitance combining with load resistance to give a slow rise time.
