@@ -155,6 +155,8 @@ The SK2812 works at 5V, but the Pico only outputs 3.3V. To be sure this is going
 
 Start with a basic NPN transistor as a switch. Note that this will invert the signal. We adjust for this in software: our routines `setOne` and `setZero` need to be transposed.
 
+__This didn't work. A transitor switch is too slow. See a more detailed discussion.__
+
 ### Power supply considerations
 The Pico needs a 3.3V supply. The SK2812 runs off 5V. The other LED strip uses the WS2811 running off 12V.
 
