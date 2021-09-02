@@ -147,21 +147,25 @@ and for blue
 reset()
 sendTriplet(0, 0, 255)
 ```
+__This didn't work. Micropython is too slow. See a more detailed discussion.__
 
-Let's get this working and go on from there. Maybe we could implement some hex colour codes.
+From [a quick investigation](https://github.com/willnotwish/pi-pico-experiments/issues/1) I found that bit banging a GPIO pin in software isn't possible at the kind of speeds we need here, at least not with micropython. The maximum frequency I can achieve is about 65kHz. Too slow, by a long way.
+
+One alternative is to use the SPI.
+
+Another is to follow the guidance in the Pico's C SDK and use PIO instead. This is what did in the end.
 
 ## 3.3V vs 5V: level shifting
 The SK2812 works at 5V, but the Pico only outputs 3.3V. To be sure this is going to work, we need a level shifter.
 
 Start with a basic NPN transistor as a switch. Note that this will invert the signal. We adjust for this in software: our routines `setOne` and `setZero` need to be transposed.
 
-### Power supply considerations
-The Pico needs a 3.3V supply. The SK2812 runs off 5V. The other LED strip uses the WS2811 running off 12V.
+__This didn't work. A transitor switch is too slow. See a [more detailed discussion](https://github.com/willnotwish/pi-pico-experiments/blob/main/docs/hardware-led-driver.md).__
 
-I think it's fine to connect the collector of an NPN transistor to a separate 5V or 12V power source via a (say) 10K resistor. If you're worried, start off with a battery.
+### More random info
+I bought a cheapo LED strip with a solar charger from a discount shop. The LEDs (all white) are not individually addressable. The rechargeable battery is a 1.2V Ni-MH.
 
-### Timing issues
-From [a quick investifation](https://github.com/willnotwish/pi-pico-experiments/issues/1) I found that bit banging a GPIO pin in software isn't possible at the kind of speeds we need here,
-at least not with micropython. The maximum frequency I can achieve is about 65kHz. Too slow, by a long way.
+I hooked up my scope to look at the driving signal. It's a +/- 2.5V square wave of frequency 4kHz. There must be some sort of boost converter on board. As usual I can't see which chips are used because the manufacturers' markings are scratched off.
 
-Letr's consider an alternative: using the SPI instead.
+![bright-garden-5m-white-led-strip-waveform](https://user-images.githubusercontent.com/52467/128397817-d74e9c1b-0525-4071-966e-92c422cf6e83.png)
+
