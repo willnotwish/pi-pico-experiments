@@ -175,5 +175,6 @@ I connected up a variable PSU to drive the strip. At 5V, the draw was only 400mA
 Presumably each LED has a built-in current limiting resistor. The average forward voltage drop of an LED is somewhere between 1.8 and 3.3V. I don't kn ow which LEDs are used in this cheapo strip.
 
 With a 5V supply, and a 1.8V drop, an internal resistor R needs to drop 5 - 1.8 = 3.2V. At 4mA, R = 3.2/4 K = 800&ohm;
-With a 5V supply, and a 3.3V drop, an internal resistor R needs to drop 5 - 3.3 = 1.7V. At 4mA, R = 1.7/4 K = 420R
+
+With a 5V supply, and a 3.3V drop, an internal resistor R needs to drop 5 - 3.3 = 1.7V. At 4mA, R = 1.7/4 K = 420&ohm;
 
