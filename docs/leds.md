@@ -178,6 +178,6 @@ With a 5V supply, and a 1.8V drop, an internal resistor R needs to drop 5 - 1.8 
 
 With a 5V supply, and a 3.3V drop, an internal resistor R needs to drop 5 - 3.3 = 1.7V. At 4mA, R = 1.7/4 K = 420&ohm; (case 2)
 
-To get 20mA per LED (2A total), the voltage would need to be 0.02*800 + 3.2 = 19.2V (case 1) and 0.02*420 + 3.3 = 11.7V.
+To get 20mA per LED (2A total), the voltage would need to be 0.02 * 800 + 3.2 = 19.2V (case 1) and 0.02 * 420 + 3.3 = 11.7V.
 
 An input of 5-12V input would seem to be appropriate.
