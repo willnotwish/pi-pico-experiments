@@ -185,4 +185,4 @@ An input of 5-12V input would seem to be appropriate. A Rolls Royce solution wou
 #### Polarity
 It turns out that only half the LEDs are lit with a DC voltage applied. When the polarity is reversed, the other half light up.
 
-Maybe this is something to do with the "flashing" mode that the controler has (operated by a switch).
+I think they are driven by what is known as an [H Bridge](https://en.wikipedia.org/wiki/H-bridge).
