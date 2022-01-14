@@ -181,3 +181,8 @@ With a 5V supply, and a 3.3V drop, an internal resistor R needs to drop 5 - 3.3 
 To get 20mA per LED (2A total), the voltage would need to be 0.02 * 800 + 3.2 = 19.2V (case 1) and 0.02 * 420 + 3.3 = 11.7V.
 
 An input of 5-12V input would seem to be appropriate. A Rolls Royce solution would be a Pico driving an MOSFET output stage from a 12V rail via PWM. Brightness could be set in software or via an analogue input (a knob).
+
+#### Polarity
+It turns out that only half the LEDs are lit with a DC voltage applied. When the polarity is reversed, the other half light up.
+
+Maybe this is something to do with the "flashing" mode that the controler has (operated by a switch).
