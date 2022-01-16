@@ -182,7 +182,36 @@ To get 20mA per LED (2A total), the voltage would need to be 0.02 * 800 + 3.2 = 
 
 An input of 5-12V input would seem to be appropriate. A Rolls Royce solution would be a Pico driving an MOSFET output stage from a 12V rail via PWM. Brightness could be set in software or via an analogue input (a knob).
 
+_Update: This is wrong! Read on..._
+
 #### Polarity
 It turns out that only half the LEDs are lit with a DC voltage applied. When the polarity is reversed, the other half light up.
 
 I think they are driven by what is known as an [H Bridge](https://en.wikipedia.org/wiki/H-bridge).
+
+#### More insight
+On the LED strip itself is the marking `3V1`.
+
+I rigged up a single LED from strip to a variable voltage supply, and measured the current drawn as I increased the supply voltage.
+
+At < 2.3V, the LED was not illuminated. At 2.3V I could spot a very dim light (pinhead-sized). The relationship between supply voltage and current was then noted:
+
+```
+V (V)    I (mA)
+2.66      2.7
+2.70      4.1
+2.84      9.3
+2.92     12.6
+2.94     13.7
+2.97     14.9
+3.03     17.6
+3.06     19.4
+```
+
+The current measurements are perhaps not very accurate (crap multimeter).
+
+I would say that there was no appreciable increase in brightness when increasing the voltage further. Eventually (at around 12V), the LED went out.
+
+I think it's fair to say that the LED has a forward voltage drop of 3.1V with a current of 20mA.
+
+This would explain why - in the scope trace above - the signal is switching between +/-3V.
