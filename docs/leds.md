@@ -223,3 +223,5 @@ To drive 50 LEDs at 20mA each requires the PSU to be capable of supplying 1A.
 H bridge switching at 4kHz, fed from 3V supply. Max current capacity is 1A.
 
 To dim, alter the pulse width. It may be possible to use standard PWM to vary the duty cycle, like this:
+
+![hand-drawn-led-strip-waveform](https://github.com/willnotwish/pi-pico-experiments/blob/main/docs/images/IMG-1099.JPG)
