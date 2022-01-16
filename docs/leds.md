@@ -192,7 +192,7 @@ I think they are driven by what is known as an [H Bridge](https://en.wikipedia.o
 #### More insight
 On the LED strip itself is the marking `3V1`.
 
-I rigged up a single LED from strip to a variable voltage supply, and measured the current drawn as I increased the supply voltage.
+I rigged up a single LED from the strip to a variable voltage supply, and measured the current drawn as I increased the supply voltage.
 
 At < 2.3V, the LED was not illuminated. At 2.3V I could spot a very dim light (pinhead-sized). The relationship between supply voltage and current was then noted:
 
@@ -214,4 +214,12 @@ I would say that there was no appreciable increase in brightness when increasing
 
 I think it's fair to say that the LED has a forward voltage drop of 3.1V with a current of 20mA.
 
-This would explain why - in the scope trace above - the signal is switching between +/-3V.
+This would explain why - in the scope trace above - the signal is switching between +/-3V. It is important that the supply voltage does not exceed 3.1V.
+
+To drive 50 LEDs at 20mA each requires the PSU to be capable of supplying 1A.
+
+#### Driver spec
+
+H bridge switching at 4kHz, fed from 3V supply. Max current capacity is 1A.
+
+To dim, alter the pulse width. It may be possible to use standard PWM to vary the duty cycle, like this:
