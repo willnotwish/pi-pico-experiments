@@ -235,3 +235,5 @@ pwm = PWM ( Pin ( 16 ) ) # GP16
 pwm. freq ( 4000 ) # 4kHz 
 pwm. duty_u16 ( 32768 ) # duty 50% (65535/2)
 ```
+
+[This reference](http://www.da-share.com/circuits/2-wire-led-strings/) has some useful info.
