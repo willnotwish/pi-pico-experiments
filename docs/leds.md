@@ -225,3 +225,13 @@ H bridge switching at 4kHz, fed from 3V supply. Max current capacity is 1A.
 To dim, alter the pulse width. It may be possible to use standard PWM to vary the duty cycle, like this:
 
 ![hand-drawn-led-strip-waveform](https://github.com/willnotwish/pi-pico-experiments/blob/main/docs/images/IMG-1099.JPG)
+
+The PWM signal to vary the waveform should run at 4kHz. Some code a bit like this could perhaps be used
+
+```
+from machine import Pin , PWM
+
+pwm = PWM ( Pin ( 16 ) ) # GP16
+pwm. freq ( 4000 ) # 4kHz 
+pwm. duty_u16 ( 32768 ) # duty 50% (65535/2)
+```
