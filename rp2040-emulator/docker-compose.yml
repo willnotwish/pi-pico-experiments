@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  rp2040pio:
+    image: rp2040pio
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 2040:2040
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${HOME}/.Xauthority:/root/.Xauthority
+    environment:
+      - DISPLAY
+    hostname: ${HOSTNAME}
+
+# To run the accompanying utilities:
+# dc exec -d rp2040pio java -jar jar/rp2040pio_gpioobserver.jar
+# dc exec -d rp2040pio java -jar jar/rp2040pio_codeobserver.jar
+# dc exec -d rp2040pio java -jar jar/rp2040pio_fifoobserver.jar
+# dc exec -d rp2040pio java -jar jar/rp2040pio_diagram.jar
