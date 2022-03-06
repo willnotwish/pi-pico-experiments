@@ -4,9 +4,6 @@ import array, time
 from machine import Pin
 import rp2
 
-# Configure the number of WS2812 LEDs.
-NUM_LEDS = 10
-
 @rp2.asm_pio(sideset_init=rp2.PIO.OUT_LOW, out_shiftdir=rp2.PIO.SHIFT_LEFT, autopull=True, pull_thresh=24)
 def ws2812():
     T1 = 2
@@ -22,13 +19,14 @@ def ws2812():
     wrap()
 
 
-# Create the StateMachine with the ws2812 program, outputting on Pin(6).
-sm = rp2.StateMachine(0, ws2812, freq=8_000_000, sideset_base=Pin(6))
+# Create the StateMachine with the ws2812 program, outputting on GPIO pin 7 (pin 10 on pico)
+sm = rp2.StateMachine(0, ws2812, freq=8_000_000, sideset_base=Pin(7))
 
 # Start the StateMachine. It will wait for data on its FIFO.
 sm.active(1)
 
 # An array of LEDs
+NUM_LEDS = 50
 leds = array.array("I", [0 for _ in range(NUM_LEDS)])
 
 # Helper functions
@@ -83,12 +81,15 @@ black = colour(0, 0, 0)
 orange = colour(0xff, 0x32, 0x00)
 purple = colour(200, 0, 180)
 
-colours = [red, blue, purple, red, green, white, red, green, orange, white]
+#colours = [white, blue, purple, red, green, white, red, green, white, white]
+colours = [red, blue, blue, blue, red, green, white, red, green, white, white]
 # colours = [blue, green, red, green, blue, white]
+
+#demo()
 
 while(1):
     display(colours)
-    pause(2000)
+    pause(5000)
     all_off()
     pause(500)
 
