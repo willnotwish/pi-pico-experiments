@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="283dc79d-eced-46e3-ab34-c9eb3a14b5fc" name="Changes" comment="Ubuntu instructions">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MicroPythonDevices" devicePath="/dev/ttyACM0" autoDetectDevicePath="false" />
+  <component name="ProjectId" id="261PnxHCzSuL3JJkAbfZpNPZYJc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.micropython.configurable" />
+  </component>
+  <component name="RunManager" selected="MicroPython.Flash flasher.py">
+    <configuration name="Flash flasher.py" type="MicroPythonConfigurationType" factoryName="MicroPython" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/flasher.py">
+      <module name="pi-pico-experiments" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Flash hello.py" type="MicroPythonConfigurationType" factoryName="MicroPython" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/hello.py">
+      <module name="pi-pico-experiments" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Flash main.py" type="MicroPythonConfigurationType" factoryName="MicroPython" nameIsGenerated="true" path="$PROJECT_DIR$/main.py">
+      <module name="pi-pico-experiments" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Flash pio-blinker.py" type="MicroPythonConfigurationType" factoryName="MicroPython" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/pio/pio-blinker.py">
+      <module name="pi-pico-experiments" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Flash pwmled.py" type="MicroPythonConfigurationType" factoryName="MicroPython" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/pwmled.py">
+      <module name="pi-pico-experiments" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="MicroPython.Flash flasher.py" />
+        <item itemvalue="MicroPython.Flash pio-blinker.py" />
+        <item itemvalue="MicroPython.Flash hello.py" />
+        <item itemvalue="MicroPython.Flash pwmled.py" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="283dc79d-eced-46e3-ab34-c9eb3a14b5fc" name="Changes" comment="" />
+      <created>1646588289751</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646588289751</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Updated desklamp docs">
+      <created>1646590455128</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646590455128</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Ubuntu instructions">
+      <created>1646663168069</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646663168069</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated desklamp docs" />
+    <MESSAGE value="Ubuntu instructions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ubuntu instructions" />
+  </component>
+</project>
