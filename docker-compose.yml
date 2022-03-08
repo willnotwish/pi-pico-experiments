@@ -1,8 +1,0 @@
-version: '3.4'
-
-services:
-  pipico:
-    image: pipico
-    build:
-      context: .
-      dockerfile: Dockerfile
