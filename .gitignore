@@ -78,3 +78,5 @@ fabric.properties
 
 # RP2040 PIO emulator is from an external repo
 rp2040-emulator/rp2040pio
+
+switch/__pycache__
