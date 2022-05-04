@@ -35,4 +35,4 @@ I have a design somewhere
 - 10-turn pot
 - old-skool pot
 
-I know how to vary the pulse width in a loop, but have to work out how to scan buttons or use a potentiometer. The RP2040 chip has an A/D converter built in.
+I know how to vary the pulse width in a loop, but I have to work out how to scan buttons or use a potentiometer. The RP2040 chip has an A/D converter built in.
